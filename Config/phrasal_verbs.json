@@ -1,0 +1,30 @@
+[
+	{
+		"id": "p1",
+		"question": "Hey! Get ____ of here, it's dangerous!",
+		"options": ["up", "out", "in"],
+		"correct_index": 1,
+		"explanation": "'Get out' means to leave a place."
+	},
+	{
+		"id": "p2",
+		"question": "I usually get ____ at 7 AM every day.",
+		"options": ["get", "got", "up"],
+		"correct_index": 2,
+		"explanation": "'Get up' means to rise from bed."
+	},
+	{
+		"id": "p3",
+		"question": "I am looking ____ my keys. Have you seen them?",
+		"options": ["for", "after", "at"],
+		"correct_index": 0,
+		"explanation": "'Look for' means to search for something."
+	},
+	{
+		"id": "p4",
+		"question": "She looks ____ her little brother on weekends.",
+		"options": ["up", "out", "after"],
+		"correct_index": 2,
+		"explanation": "'Look after' means to take care of someone."
+	}
+]

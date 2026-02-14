@@ -1,0 +1,30 @@
+[
+	{
+		"id": "c1",
+		"question": "She ____ to the cinema yesterday.",
+		"options": ["go", "goes", "went"],
+		"correct_index": 2,
+		"explanation": "Past Simple: 'yesterday' indicates a finished action in the past."
+	},
+	{
+		"id": "c2",
+		"question": "I have ____ my homework already.",
+		"options": ["do", "did", "done"],
+		"correct_index": 2,
+		"explanation": "Present Perfect: 'have' + past participle ('done')."
+	},
+	{
+		"id": "c3",
+		"question": "Look! It ____ raining.",
+		"options": ["is", "was", "are"],
+		"correct_index": 0,
+		"explanation": "Present Continuous: The action is happening right now ('Look!')."
+	},
+	{
+		"id": "c4",
+		"question": "If I ____ you, I would study harder.",
+		"options": ["was", "were", "am"],
+		"correct_index": 1,
+		"explanation": "Second Conditional: We use 'were' for all persons in hypothetical situations."
+	}
+]

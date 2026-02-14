@@ -1,0 +1,14 @@
+{
+	"difficulties": {
+		"easy": 20.0,
+		"normal": 15.0,
+		"hard": 10.0,
+		"hardcore": 5.0
+	},
+	"lives": {
+		"easy": 5,
+		"normal": 5,
+		"hard": 3,
+		"hardcore": 2
+	}
+}

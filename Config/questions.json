@@ -1,0 +1,37 @@
+[
+	{
+		"id": "q1",
+		"question": "I usually ____ up at 7 AM every day.",
+		"options": ["get", "got", "getting"],
+		"correct_index": 0,
+		"explanation": "Use the Present Simple ('get') for habits or repeated actions."
+	},
+	{
+		"id": "q2",
+		"question": "She ____ to the cinema yesterday.",
+		"options": ["go", "goes", "went"],
+		"correct_index": 2,
+		"explanation": "The key word is 'yesterday', so we must use the Past Simple ('went')."
+	},
+	{
+		"id": "q3",
+		"question": "Hey! Get ____ of here, it's dangerous!",
+		"options": ["up", "out", "in"],
+		"correct_index": 1,
+		"explanation": "'Get out' means to leave a place. 'Get up' implies rising from a bed or chair."
+	},
+	{
+		"id": "q4",
+		"question": "If I had money, I ____ buy a car.",
+		"options": ["will", "would", "did"],
+		"correct_index": 1,
+		"explanation": "This is the Second Conditional. We use 'would' + infinitive for hypothetical situations."
+	},
+	{
+		"id": "q5",
+		"question": "How do you do?",
+		"options": ["I'm fine, thanks.", "How do you do?", "I am doing homework."],
+		"correct_index": 1,
+		"explanation": "'How do you do?' is a formal greeting. The correct response is to repeat 'How do you do?'."
+	}
+]
