@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://b6ftyspyxw60p"]
 
-[ext_resource type="Script" path="res://Game.gd" id="1_game"]
-[ext_resource type="Script" path="res://SoundButton.gd" id="2_soundbtn"]
+[ext_resource type="Script" uid="uid://c80mopeg3gxpc" path="res://Game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://6anl00e5dn6" path="res://SoundButton.gd" id="2_soundbtn"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -117,19 +117,19 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="NextButton" type="Button" parent="FeedbackPanel/VBoxContainer"]
-script = ExtResource("2_soundbtn")
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Next Question"
+script = ExtResource("2_soundbtn")
 
 [node name="HomeButton" type="Button" parent="FeedbackPanel/VBoxContainer"]
-script = ExtResource("2_soundbtn")
 visible = false
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Back to Menu"
+script = ExtResource("2_soundbtn")
 
 [node name="QuestionTimer" type="Timer" parent="."]
 one_shot = true
