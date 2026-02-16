@@ -22,21 +22,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2881776, 0.66560245, 0.6681206, 1)
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 100.0
-offset_right = 150.0
-offset_bottom = 204.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 52
-text = "Spaceglish"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 518.0
@@ -45,3 +30,12 @@ offset_right = 646.0
 offset_bottom = 413.0
 texture_normal = ExtResource("2_8saeu")
 script = ExtResource("3_8saeu")
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 76.0
+offset_right = 1150.0
+offset_bottom = 169.0
+bbcode_enabled = true
+text = "[center][wave freq=5][font_size=50px][outline_size=20px]Spaceglish"

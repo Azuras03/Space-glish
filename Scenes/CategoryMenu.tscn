@@ -21,21 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1, 0.1, 0.15, 1)
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 80.0
-offset_right = 150.0
-offset_bottom = 130.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 32
-text = "Select Topic"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -73,3 +58,12 @@ theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Mixed Questions"
 script = ExtResource("2_1uj23")
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 76.0
+offset_right = 707.0
+offset_bottom = 169.0
+bbcode_enabled = true
+text = "[center][wave freq=5][font_size=40px]Select Topic"
