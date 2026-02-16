@@ -2,7 +2,7 @@
 	{
 		"id": "c1",
 		"question": "She ____ to the cinema yesterday.",
-		"options": ["go", "goes", "went"],
+		"options": ["go", "goes", "went", "gone", "has"],
 		"correct_index": 2,
 		"explanation": "Past Simple: 'yesterday' indicates a finished action in the past."
 	},
