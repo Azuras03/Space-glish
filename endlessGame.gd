@@ -3,7 +3,7 @@ extends Control
 var lives = 3
 var current_question = null
 var is_answering = false
-var pause = false
+var isPause = false
 var combo = 1
 var time_limit = 15.0 # Sera écrasé par GameManager
 var score=0
@@ -18,16 +18,30 @@ var score=0
 @onready var restart_button = $FeedbackPanel/VBoxContainer/RestartButton
 @onready var home_button = $FeedbackPanel/VBoxContainer/HomeButton
 @onready var question_timer = $QuestionTimer
+@onready var combo_bar = $ComboBar
+@onready var pause_button = $TopBar/PauseButton
+@onready var pause_panel = $PausePanel
+@onready var play_button_pause = $PausePanel/VBoxContainer/HBoxContainer/PlayButton
+@onready var home_button_pause = $PausePanel/VBoxContainer/HBoxContainer/HomeButton
+@onready var musicPauseButton = $PausePanel/VBoxContainer/HBoxContainer/MusicPauseButton
+# Musique
+@onready var music = $MusicPlayer
 
 func _ready():
+	music.play()
+	pause_panel.visible = false
+	pause_button.pressed.connect(pause)
 	# Load difficulty from GameManager (Time AND Lives)
 	time_limit = GameManager.current_time_limit
 	print(time_limit)
 	lives = GameManager.current_starting_lives
 	
 	# Connect buttons
-	restart_button.pressed.connect(_on_replay_pressed)
-	home_button.pressed.connect(_on_home_pressed)
+	restart_button.pressed.connect(replay)
+	musicPauseButton.pressed.connect(toggleMusic)
+	home_button.pressed.connect(home)
+	play_button_pause.pressed.connect(play)
+	home_button_pause.pressed.connect(home)
 	# Connect timer timeout
 	question_timer.timeout.connect(_on_timer_timeout)
 	
@@ -40,13 +54,32 @@ func _ready():
 	# Load first question
 	load_new_question()
 
+func home():
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+
+func replay():
+	get_tree().reload_current_scene()
+
+func toggleMusic():
+	music.playing = !music.playing
+
 func pauseGame():
-	if !pause:
-		pause = true
-		question_timer.stop()
+	if !isPause:
+		# Partie pause
+		pause()
 		return
-	pause = false
-	question_timer.start()
+	# Partie unpause
+	play()
+
+func play():
+	isPause = false
+	pause_panel.visible = false;
+	question_timer.paused = false;
+
+func pause():
+	isPause = true
+	question_timer.paused = true;
+	pause_panel.visible = true;
 
 func _process(delta):
 	if not question_timer.is_stopped():
@@ -101,19 +134,19 @@ func load_new_question():
 		btn.pressed.connect(_on_option_selected.bind(option_data["original_index"]))
 		options_container.add_child(btn)
 
-func scale_score_ui(scale):
+func scale_element(scale, element, color):
 	# Set pivot offset to center for rotation
-	score_label.pivot_offset = score_label.size / 2
+	element.pivot_offset = element.size / 2
 	
 	# Create a new tween for the animation
 	var tween = create_tween()
 	
 	# Simple shake animation (rotation)
-	tween.tween_property(score_label, "scale", Vector2(scale, scale), 0.1).set_ease(Tween.EASE_OUT)
-	tween.tween_property(score_label, "scale", Vector2(1,1), 0.3).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(element, "scale", Vector2(scale, scale), 0.1).set_ease(Tween.EASE_OUT)
+	tween.tween_property(element, "scale", Vector2(1,1), 0.3).set_ease(Tween.EASE_IN_OUT)
 	var color_tween = create_tween()
-	color_tween.tween_property(score_label, "modulate", Color.GREEN, 0.1)
-	color_tween.tween_property(score_label, "modulate", Color.WHITE, 0.3)
+	color_tween.tween_property(element, "modulate", color, 0.1)
+	color_tween.tween_property(element, "modulate", Color.WHITE, 0.3)
 
 func _on_option_selected(index):	
 	var correct_index = int(current_question["correct_index"])
@@ -132,14 +165,14 @@ func endGame():
 
 func show_feedback(is_correct, time_out = false):
 	if(is_correct):
-		score += 100
+		score += 100*combo
 		score_label.text = str("Score :", score)
-		scale_score_ui(1.1*combo)
-		combo+=.5
+		scale_element(min(1.1+(combo/10),2), score_label, Color.GREEN)
+		combo+=1
+		combo_bar.text = str("x",combo)
+	else:
+		score_label.text = str("Score :", score)
+		combo=1
+		combo_bar.text = str("x",combo)
+		scale_element(.8, combo_bar, Color.RED)
 	load_new_question()
-
-func _on_replay_pressed():
-	get_tree().reload_current_scene()
-
-func _on_home_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

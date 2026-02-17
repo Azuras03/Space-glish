@@ -14,9 +14,9 @@ func play_click_sound() -> void:
 
 func _create_click_stream() -> AudioStreamWAV:
 	var audio_data := PackedByteArray()
-	var sample_rate := 44100.0
+	var sample_rate := 20000.0
 	var duration := 0.05
-	var frequency := 800.0
+	var frequency := 600.0
 	
 	for i in range(int(sample_rate * duration)):
 		var t = i / sample_rate

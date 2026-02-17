@@ -4,6 +4,8 @@ class_name TextureSoundButton
 func _init() -> void:
 	# On se connecte ici pour être sûr que ça marche même si ajouté dynamiquement
 	pressed.connect(_on_pressed)
+	self.custom_minimum_size.x = 50.0
+	self.custom_minimum_size.y = 50.0
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://da6igwr4cflct"]
+[gd_scene load_steps=6 format=3 uid="uid://da6igwr4cflct"]
 
 [ext_resource type="Script" uid="uid://nrxrurvwxgq3" path="res://endlessGame.gd" id="1_yscjy"]
+[ext_resource type="Texture2D" uid="uid://bnh5l763gwuss" path="res://Assets/Buttons/pause.png" id="2_47x6x"]
+[ext_resource type="Script" uid="uid://7e68hb24hbuy" path="res://TextureSoundButton.gd" id="2_83qao"]
 [ext_resource type="Script" uid="uid://6anl00e5dn6" path="res://SoundButton.gd" id="2_v85je"]
+[ext_resource type="AudioStream" uid="uid://cxpexj3n5rm8g" path="res://Assets/Music/endless.mp3" id="5_47x6x"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -30,20 +33,30 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 60.0
 grow_horizontal = 2
+theme_override_constants/separation = 29
 
-[node name="TimerLabel" type="Label" parent="TopBar"]
+[node name="PauseButton" type="TextureButton" parent="TopBar"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Score : 15"
+texture_normal = ExtResource("2_47x6x")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_83qao")
 
 [node name="Spacer" type="Control" parent="TopBar"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.48
 
 [node name="ScoreLabel" type="Label" parent="TopBar"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Score : 15"
+text = "Score : 0"
+
+[node name="TimerLabel" type="Label" parent="TopBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Time : 0"
 
 [node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -132,5 +145,87 @@ size_flags_horizontal = 4
 text = "Back to Menu"
 script = ExtResource("2_v85je")
 
+[node name="PausePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -175.0
+offset_right = 250.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="FeedbackLabel" type="Label" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="ExplanationLabel" type="Label" parent="PausePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Pro tip : Play the f-ing game to progress
+allez salu"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="HomeButton" type="Button" parent="PausePanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Menu"
+script = ExtResource("2_v85je")
+
+[node name="PlayButton" type="Button" parent="PausePanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Play"
+script = ExtResource("2_v85je")
+
+[node name="MusicPauseButton" type="Button" parent="PausePanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Turn off music"
+script = ExtResource("2_v85je")
+
 [node name="QuestionTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="ComboBar" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 594.0
+offset_right = 156.0
+offset_bottom = 635.0
+theme_override_font_sizes/font_size = 31
+text = "x1"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_47x6x")
+volume_db = -14.114
+autoplay = true
