@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Assets/Music/*.mp3
+Assets/Music/*.mp3.import
