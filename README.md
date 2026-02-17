@@ -7,3 +7,5 @@ Don't worry though, it's all about practice ! ✨
 ## Creators 🛠️
 
 Nicolas (Azuras) R. & Salif V.
+
+Made with ❤️ in Godot
