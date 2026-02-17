@@ -3,7 +3,8 @@
 		"easy": 20.0,
 		"normal": 15.0,
 		"hard": 10.0,
-		"hardcore": 5.0
+		"hardcore": 5.0,
+		"endless": 120
 	},
 	"lives": {
 		"easy": 5,

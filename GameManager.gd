@@ -7,14 +7,10 @@ var lives_settings: Dictionary = {}
 var current_time_limit: float = 15.0 # Valeur par défaut
 var current_starting_lives: int = 3 # Valeur par défaut
 var current_category_path: String = "res://Config/questions.json" # Par défaut
-var truc: String = "NO"
 
 func _ready():
 	load_config()
 	# On ne charge pas les questions ici, on le fera quand la catégorie sera choisie
-
-func trucc():
-	truc = "SALU"
 
 func load_questions(file_path: String):
 	var file = FileAccess.open(file_path, FileAccess.READ)
@@ -70,6 +66,7 @@ func set_difficulty(difficulty_name: String):
 	# Set Time Limit
 	if difficulty_settings.has(difficulty_name):
 		current_time_limit = difficulty_settings[difficulty_name]
+		print(difficulty_name, " est mis !")
 	else:
 		current_time_limit = 15.0 # Fallback
 	

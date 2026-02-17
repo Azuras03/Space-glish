@@ -81,3 +81,11 @@ theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
 theme_override_font_sizes/font_size = 20
 text = "HARDCORE"
 script = ExtResource("2_soundbtn")
+
+[node name="EndlessBtn" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19999999, 0.7866667, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Endless"
+script = ExtResource("2_soundbtn")

@@ -7,7 +7,12 @@ func _ready():
 	$VBoxContainer/NormalBtn.pressed.connect(_on_difficulty_selected.bind("normal"))
 	$VBoxContainer/HardBtn.pressed.connect(_on_difficulty_selected.bind("hard"))
 	$VBoxContainer/HardcoreBtn.pressed.connect(_on_difficulty_selected.bind("hardcore"))
+	$VBoxContainer/EndlessBtn.pressed.connect(_endless_mode)
 
 func _on_difficulty_selected(difficulty: String):
 	GameManager.set_difficulty(difficulty)
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+
+func _endless_mode():
+	GameManager.set_difficulty("endless")
+	get_tree().change_scene_to_file("res://Scenes/EndlessGame.tscn")
