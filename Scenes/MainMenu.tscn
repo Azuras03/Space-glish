@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0gxqfb568p7r"]
 
 [ext_resource type="Script" uid="uid://5lo71il7h57b" path="res://MainMenu.gd" id="1_mainmenu"]
-[ext_resource type="Texture2D" uid="uid://bcphy12w5472g" path="res://icon.svg" id="2_8saeu"]
 [ext_resource type="Texture2D" uid="uid://c35ji16602ah1" path="res://Assets/Buttons/play.png" id="2_ghw46"]
 [ext_resource type="Script" uid="uid://7e68hb24hbuy" path="res://TextureSoundButton.gd" id="3_8saeu"]
+[ext_resource type="Texture2D" uid="uid://c4pt7xm12apg4" path="res://Assets/Buttons/quit.png" id="4_ghw46"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,6 +30,7 @@ offset_top = 295.0
 offset_right = 548.0
 offset_bottom = 408.0
 texture_normal = ExtResource("2_ghw46")
+stretch_mode = 5
 script = ExtResource("3_8saeu")
 
 [node name="QuitButton" type="TextureButton" parent="."]
@@ -38,7 +39,8 @@ offset_left = 581.0
 offset_top = 295.0
 offset_right = 709.0
 offset_bottom = 423.0
-texture_normal = ExtResource("2_8saeu")
+texture_normal = ExtResource("4_ghw46")
+stretch_mode = 5
 script = ExtResource("3_8saeu")
 
 [node name="Label" type="RichTextLabel" parent="."]
