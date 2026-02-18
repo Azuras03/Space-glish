@@ -52,6 +52,11 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
+[node name="ApprendreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pour l'apprentissage"
+horizontal_alignment = 1
+
 [node name="EasyBtn" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -81,6 +86,11 @@ theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
 theme_override_font_sizes/font_size = 20
 text = "HARDCORE"
 script = ExtResource("2_soundbtn")
+
+[node name="RenforcementLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pour le renforcement"
+horizontal_alignment = 1
 
 [node name="EndlessBtn" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)

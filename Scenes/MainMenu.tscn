@@ -23,31 +23,42 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2881776, 0.66560245, 0.6681206, 1)
 
-[node name="PlayButton" type="TextureButton" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 435.0
-offset_top = 295.0
-offset_right = 548.0
-offset_bottom = 408.0
+offset_top = 41.0
+offset_right = 1154.0
+offset_bottom = 110.0
+bbcode_enabled = true
+text = "[center][wave freq=5][font_size=50px][outline_size=20px]Spaceglish"
+fit_content = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 611.0
+offset_right = 1154.0
+offset_bottom = 634.0
+text = "Codé par Azuras & Mewtella"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 509.0
+offset_top = 259.0
+offset_right = 647.0
+offset_bottom = 397.0
 texture_normal = ExtResource("2_ghw46")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("3_8saeu")
 
 [node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 581.0
-offset_top = 295.0
-offset_right = 709.0
-offset_bottom = 423.0
+offset_left = 15.0
+offset_top = 559.0
+offset_right = 86.0
+offset_bottom = 636.0
 texture_normal = ExtResource("4_ghw46")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("3_8saeu")
-
-[node name="Label" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 76.0
-offset_right = 1150.0
-offset_bottom = 169.0
-bbcode_enabled = true
-text = "[center][wave freq=5][font_size=50px][outline_size=20px]Spaceglish"
