@@ -10,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gi1y"]
 shader = ExtResource("2_tqd8k")
-shader_parameter/stripes = 8.75
+shader_parameter/stripes = 5.605
 shader_parameter/stripe_thickness = 0.19
 shader_parameter/stripe_color = Color(0.12069068, 0.25939035, 0.33164233, 1)
 shader_parameter/background_color = Color(0.0163188, 1.937413e-05, 0.067333475, 1)
