@@ -69,6 +69,8 @@ func _on_question_answered(is_correct: bool):
 		vies -= 1
 		update_lives_ui()
 		shake_element(livesContainer)
+		# TODO Gérér la fin (quand on a plus de vie)
+		# Donc une page avec le score et le boutons qui vont bien hehe
 
 
 func shake_element(element):
