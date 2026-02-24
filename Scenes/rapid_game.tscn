@@ -19,8 +19,24 @@ offset_top = 40.0
 offset_right = 1148.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 232.0
-offset_bottom = 82.0
+[node name="NextQuestionTimer" type="Timer" parent="."]
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TopBar"]
+layout_mode = 2
 text = "Score : "
+
+[node name="Spacer" type="Control" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LivesContainer" type="Label" parent="TopBar"]
+layout_mode = 2
+text = "Vies"

@@ -53,11 +53,6 @@ func _process(delta):
 		else:
 			time_bar.modulate = Color.WHITE
 
-func update_lives_ui():
-	# Clear existing hearts
-	for child in lives_container.get_children():
-		child.queue_free()
-	
 func load_new_question():
 	current_question = GameManager.get_random_question()
 	if current_question == null:
@@ -118,8 +113,6 @@ func _on_timer_timeout():
 	# Timer finished naturally, treat as incorrect
 	show_feedback(false, true)
 
-func show_feedback(is_correct, time_out = false):
-	if is_correct:
-		question_answered.emit(true)
-	else:
-		question_answered.emit(false)
+func show_feedback(is_correct:bool, time_out = false):
+		question_answered.emit(is_correct)
+		AnimationUtils.animateEnding(self, is_correct)

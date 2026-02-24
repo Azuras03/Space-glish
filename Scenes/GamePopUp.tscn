@@ -8,6 +8,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 600.0
 offset_bottom = 300.0
+pivot_offset = Vector2(300, 150)
 script = ExtResource("1_wa1yh")
 
 [node name="Background" type="ColorRect" parent="."]
