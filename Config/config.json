@@ -4,7 +4,8 @@
 		"normal": 15.0,
 		"hard": 10.0,
 		"hardcore": 5.0,
-		"endless": 120
+		"endless": 120,
+		"rapid": 15
 	},
 	"lives": {
 		"easy": 5,

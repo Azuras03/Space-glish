@@ -7,13 +7,12 @@ var time_limit = 15.0 # Sera écrasé par GameManager
 @onready var question_label = $Content/QuestionLabel
 @onready var options_container = $Content/OptionsContainer
 @onready var lives_container = $TopBar/LivesContainer
-@onready var feedback_panel = $FeedbackPanel
-@onready var feedback_label = $FeedbackPanel/VBoxContainer/FeedbackLabel
-@onready var explanation_label = $FeedbackPanel/VBoxContainer/ExplanationLabel
-@onready var next_button = $FeedbackPanel/VBoxContainer/NextButton
-@onready var home_button = $FeedbackPanel/VBoxContainer/HomeButton
 @onready var time_bar = $TimeBar
 @onready var question_timer = $QuestionTimer
+@onready var window_grabber = $WindowGrabber
+
+var is_dragging = false
+var offset = Vector2.ZERO # Pour mémoriser où on a cliqué à l'intérieur du bouton
 
 signal question_answered(is_correct: bool)
 
@@ -21,15 +20,9 @@ func _ready():
 	# Load difficulty from GameManager (Time AND Lives)
 	time_limit = GameManager.current_time_limit
 
-	# Connect buttons
-	next_button.pressed.connect(_on_next_pressed)
-	home_button.pressed.connect(_on_home_pressed)
 	# Connect timer timeout
 	question_timer.timeout.connect(_on_timer_timeout)
-
-	# Hide feedback initially
-	feedback_panel.visible = false
-	home_button.visible = false
+	window_grabber.gui_input.connect(_on_window_grabber_pressed)
 
 	# Initialize time bar
 	time_bar.max_value = time_limit
@@ -37,6 +30,19 @@ func _ready():
 
 	# Load first question
 	load_new_question()
+
+func _on_window_grabber_pressed(event):
+	# Début du drag
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				is_dragging = true
+				offset = get_global_mouse_position() - global_position
+			else:
+				is_dragging = false
+	# Si on drag 
+	if event is InputEventMouseMotion and is_dragging:
+		global_position = get_global_mouse_position() - offset
 
 func _process(delta):
 	if is_answering and not question_timer.is_stopped():
@@ -52,35 +58,7 @@ func update_lives_ui():
 	for child in lives_container.get_children():
 		child.queue_free()
 	
-	## Add hearts based on current lives
-	#for i in range(lives):
-		#var heart = Label.new()
-		#heart.text = "❤️"
-		#heart.add_theme_font_size_override("font_size", 24)
-		#lives_container.add_child(heart)
-
-func shake_element():
-	# Set pivot offset to center for rotation
-	lives_container.pivot_offset = lives_container.size / 2
-	
-	# Create a new tween for the animation
-	var tween = create_tween()
-	
-	# Simple shake animation (rotation)
-	tween.tween_property(lives_container, "rotation", 0.1, 0.05).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(lives_container, "rotation", -0.1, 0.05).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(lives_container, "rotation", 0.05, 0.05).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(lives_container, "rotation", 0.0, 0.05).set_trans(Tween.TRANS_SINE)
-	
-	# Flash red
-	var color_tween = create_tween()
-	color_tween.tween_property(lives_container, "modulate", Color.RED, 0.1)
-	color_tween.tween_property(lives_container, "modulate", Color.WHITE, 0.2)
-
 func load_new_question():
-	feedback_panel.visible = false
-	home_button.visible = false
-	
 	current_question = GameManager.get_random_question()
 	if current_question == null:
 		question_label.text = "Error: No questions found in JSON!"
@@ -141,30 +119,7 @@ func _on_timer_timeout():
 	show_feedback(false, true)
 
 func show_feedback(is_correct, time_out = false):
-	feedback_panel.visible = true
-	
 	if is_correct:
-		feedback_label.text = "Correct!"
-		feedback_label.modulate = Color.GREEN
-		explanation_label.text = "Well done!"
-		next_button.text = "Next Question"
-		home_button.visible = false
 		question_answered.emit(true)
 	else:
-		#lives -= 1
-		#update_lives_ui()
-		#shake_lives_ui()
-		
-		if time_out:
-			feedback_label.text = "Time's Up!"
-		else:
-			feedback_label.text = "Incorrect!"
 		question_answered.emit(false)
-		feedback_label.modulate = Color.RED
-		explanation_label.text = current_question.get("explanation", "No explanation available.")
-
-func _on_next_pressed():
-	load_new_question()
-
-func _on_home_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
