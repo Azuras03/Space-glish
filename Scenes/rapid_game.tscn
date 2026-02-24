@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm6i4vessljb1"]
+
+[ext_resource type="Script" uid="uid://duyfd1lb7gm47" path="res://rapid_game.gd" id="1_w2bkl"]
+[ext_resource type="PackedScene" uid="uid://pas151sbssf7" path="res://Scenes/GamePopUp.tscn" id="2_w2bkl"]
+
+[node name="RapidGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w2bkl")
+question_scene = ExtResource("2_w2bkl")
+
+[node name="GamesAppender" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 1148.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 232.0
+offset_bottom = 82.0
+text = "Score : "

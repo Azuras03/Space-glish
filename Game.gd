@@ -14,42 +14,41 @@ var time_limit = 15.0 # Sera écrasé par GameManager
 @onready var explanation_label = $FeedbackPanel/VBoxContainer/ExplanationLabel
 @onready var next_button = $FeedbackPanel/VBoxContainer/NextButton
 @onready var home_button = $FeedbackPanel/VBoxContainer/HomeButton
-@onready var question_timer = $QuestionTimer
+@onready var time_bar = $TimeBar
 
 func _ready():
 	# Load difficulty from GameManager (Time AND Lives)
 	time_limit = GameManager.current_time_limit
 	lives = GameManager.current_starting_lives
-	
+
 	# Update lives display
 	update_lives_ui()
-	
+
 	# Connect buttons
 	next_button.pressed.connect(_on_next_pressed)
 	home_button.pressed.connect(_on_home_pressed)
 	# Connect timer timeout
 	question_timer.timeout.connect(_on_timer_timeout)
-	
+
 	# Hide feedback initially
 	feedback_panel.visible = false
 	home_button.visible = false
-	
+
+	# Initialize time bar
+	time_bar.max_value = time_limit
+	time_bar.value = time_limit
+
 	# Load first question
 	load_new_question()
 
 func _process(delta):
 	if is_answering and not question_timer.is_stopped():
-		var time_left = question_timer.time_left
-		var seconds = floor(time_left)
-		var millis = floor((time_left - seconds) * 100)
-		
-		# Formatage avec les millisecondes (ex: 04:85)
-		timer_label.text = "Time: %02d:%02d" % [seconds, millis]
-		
-		if time_left <= 5:
-			timer_label.modulate = Color(1, 0.3, 0.3)
+		time_bar.value = question_timer.time_left
+
+		if question_timer.time_left <= 5:
+			time_bar.modulate = Color(1, 0.3, 0.3)
 		else:
-			timer_label.modulate = Color.WHITE
+			time_bar.modulate = Color.WHITE
 
 func update_lives_ui():
 	# Clear existing hearts
@@ -124,8 +123,9 @@ func load_new_question():
 	is_answering = true
 	question_timer.wait_time = time_limit
 	question_timer.start()
-	timer_label.text = "Time: %02d:00" % [time_limit]
-	timer_label.modulate = Color.WHITE
+	time_bar.max_value = time_limit
+	time_bar.value = time_limit
+	time_bar.modulate = Color.WHITE
 
 func _on_option_selected(index):
 	if not is_answering: return
