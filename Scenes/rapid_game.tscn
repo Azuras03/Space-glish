@@ -14,10 +14,12 @@ script = ExtResource("1_w2bkl")
 question_scene = ExtResource("2_w2bkl")
 
 [node name="GamesAppender" type="Control" parent="."]
-anchors_preset = 0
-offset_top = 40.0
-offset_right = 1148.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="NextQuestionTimer" type="Timer" parent="."]
 
@@ -29,8 +31,9 @@ anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="TopBar"]
+[node name="Score" type="Label" parent="TopBar"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Score : "
 
 [node name="Spacer" type="Control" parent="TopBar"]
@@ -39,4 +42,5 @@ size_flags_horizontal = 3
 
 [node name="LivesContainer" type="Label" parent="TopBar"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Vies"

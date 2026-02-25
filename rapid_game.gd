@@ -12,7 +12,7 @@ var minWaitTime: int = 2
 var vies = 10
 
 @onready var nextQuestionTimer = $NextQuestionTimer
-@onready var scoreElement = $TopBar/Label
+@onready var scoreElement = $TopBar/Score
 @onready var gamesAppender = $GamesAppender
 @onready var livesContainer = $TopBar/LivesContainer
 
@@ -31,8 +31,9 @@ func _ready():
 func _on_timer_timeout():
 	print("Salu")
 	spawn_question()
-	if (waitTime > minWaitTime):
-		nextQuestionTimer.wait_time -= waitTimeMinus
+	if (waitTime > minWaitTime+1):
+		waitTime -= waitTimeMinus
+	nextQuestionTimer.wait_time = randf_range(minWaitTime, waitTime)
 	nextQuestionTimer.start()
 
 func update_lives_ui():
