@@ -1,30 +1,206 @@
 [
 	{
-		"id": "c1",
 		"question": "She ____ to the cinema yesterday.",
 		"options": ["go", "goes", "went", "gone", "has"],
 		"correct_index": 2,
 		"explanation": "Past Simple: 'yesterday' indicates a finished action in the past."
 	},
 	{
-		"id": "c2",
 		"question": "I have ____ my homework already.",
 		"options": ["do", "did", "done"],
 		"correct_index": 2,
 		"explanation": "Present Perfect: 'have' + past participle ('done')."
 	},
 	{
-		"id": "c3",
 		"question": "Look! It ____ raining.",
 		"options": ["is", "was", "are"],
 		"correct_index": 0,
 		"explanation": "Present Continuous: The action is happening right now ('Look!')."
 	},
 	{
-		"id": "c4",
 		"question": "If I ____ you, I would study harder.",
 		"options": ["was", "were", "am"],
 		"correct_index": 1,
 		"explanation": "Second Conditional: We use 'were' for all persons in hypothetical situations."
+	},
+	{
+		"question": "The marketing director ____ to London every Tuesday for the regional meeting.",
+		"options": ["go", "goes", "is going"],
+		"correct_index": 1,
+		"explanation": "Present Simple : On utilise 'goes' (3ème personne du singulier) pour exprimer une habitude ou une action répétée ('every Tuesday')."
+	},
+	{
+		"question": "By the time the manager arrived, the presentation ____ already started.",
+		"options": ["has", "was", "had"],
+		"correct_index": 2,
+		"explanation": "Past Perfect : On utilise 'had + participe passé' pour une action qui s'est produite avant une autre action passée ('the manager arrived')."
+	},
+	{
+		"question": "Look! It ____ raining.",
+		"options": ["is", "was", "are"],
+		"correct_index": 0,
+		"explanation": "Present Continuous : L'action se déroule au moment même où l'on parle ('Look!')."
+	},
+	{
+		"question": "We ____ our annual report for three weeks now.",
+		"options": ["prepare", "are preparing", "have been preparing"],
+		"correct_index": 2,
+		"explanation": "Present Perfect Continuous : Pour une action qui a commencé dans le passé et qui continue dans le présent, surtout avec un marqueur de durée ('for three weeks')."
+	},
+	{
+		"question": "If I ____ more time, I would finish the project today.",
+		"options": ["have", "had", "would have"],
+		"correct_index": 1,
+		"explanation": "Second Conditional : La structure est 'If + Past Simple, would + base verbale' pour exprimer une hypothèse dans le présent."
+	},
+	{
+		"question": "Last year, the company ____ its headquarters to a larger building.",
+		"options": ["moved", "has moved", "was moving"],
+		"correct_index": 0,
+		"explanation": "Past Simple : On utilise le prétérit pour une action terminée et datée dans le passé ('Last year')."
+	},
+	{
+		"question": "Please remain seated until the plane ____ to a complete stop.",
+		"options": ["will come", "comes", "is coming"],
+		"correct_index": 1,
+		"explanation": "Subordonnée de temps : Après 'until', 'when' ou 'as soon as', on utilise le présent simple pour parler d'un événement futur."
+	},
+	{
+		"question": "I ____ Mr. Henderson since he left the firm in 2018.",
+		"options": ["didn't see", "don't see", "haven't seen"],
+		"correct_index": 2,
+		"explanation": "Present Perfect : On l'utilise avec 'since' pour faire le bilan d'une période allant du passé jusqu'à maintenant."
+	},
+	{
+		"question": "They ____ the contract when the power went out.",
+		"options": ["signed", "were signing", "have signed"],
+		"correct_index": 1,
+		"explanation": "Past Continuous : Pour une action longue qui était en cours au moment où une action brève au prétérit est survenue."
+	},
+	{
+		"question": "Next month, she ____ for this company for exactly ten years.",
+		"options": ["will work", "is going to work", "will have worked"],
+		"correct_index": 2,
+		"explanation": "Future Perfect : Pour exprimer une action qui sera accomplie à un moment précis du futur ('Next month')."
+	},
+	{
+		"question": "The CEO ____ the new expansion strategy during the board meeting yesterday.",
+		"options": ["discusses", "discussed", "has discussed", "was discussing"],
+		"correct_index": 1,
+		"explanation": "Past Simple : Le mot 'yesterday' indique une action terminée à un moment précis dans le passé."
+	},
+	{
+		"question": "If the delivery ____ on time, we will be able to fulfill the client's order.",
+		"options": ["arrives", "will arrive", "arrived", "is arriving"],
+		"correct_index": 0,
+		"explanation": "First Conditional : Dans une phrase avec 'if' exprimant une condition future probable, la subordonnée est au présent simple."
+	},
+	{
+		"question": "Mr. Thompson ____ for the company for twenty years before he retired last month.",
+		"options": ["has worked", "works", "had worked", "is working"],
+		"correct_index": 2,
+		"explanation": "Past Perfect : Utilisé pour une action qui a duré et s'est achevée avant un autre événement dans le passé ('before he retired')."
+	},
+	{
+		"question": "The technicians ____ the servers at the moment, so the website might be slow.",
+		"options": ["update", "are updating", "updated", "have updated"],
+		"correct_index": 1,
+		"explanation": "Present Continuous : L'expression 'at the moment' indique une action en cours de déroulement à l'instant présent."
+	},
+	{
+		"question": "By the end of this year, our sales team ____ their annual target.",
+		"options": ["will achieve", "achieves", "will have achieved", "achieved"],
+		"correct_index": 2,
+		"explanation": "Future Perfect : 'By the end of this year' indique qu'une action sera accomplie avant un moment précis dans le futur."
+	},
+	{
+		"question": "I ____ to the manager about the issue yet, but I plan to do it this afternoon.",
+		"options": ["don't speak", "didn't speak", "am not speaking", "haven't spoken"],
+		"correct_index": 3,
+		"explanation": "Present Perfect : 'Yet' est souvent utilisé avec le Present Perfect dans les phrases négatives pour une action non encore réalisée jusqu'à présent."
+	},
+	{
+		"question": "While she ____ the report, the computer suddenly crashed.",
+		"options": ["typed", "was typing", "has typed", "types"],
+		"correct_index": 1,
+		"explanation": "Past Continuous : Exprime une action en cours de progression dans le passé lorsqu'une autre action brève (crashed) l'interrompt."
+	},
+	{
+		"question": "If they had offered a better discount, we ____ the contract with them.",
+		"options": ["would sign", "will sign", "signed", "would have signed"],
+		"correct_index": 3,
+		"explanation": "Third Conditional : Formé de 'If + Past Perfect' et de la principale en 'would have + participe passé' pour exprimer un regret ou une situation irréelle dans le passé."
+	},
+	{
+		"question": "The new software ____ installed on all computers by next Friday.",
+		"options": ["will be", "is", "was", "has been"],
+		"correct_index": 0,
+		"explanation": "Future Passive : 'by next Friday' indique le futur, et le sujet subit l'action d'être installé (voix passive)."
+	},
+	{
+		"question": "She strongly suggested that the budget ____ reviewed before the meeting.",
+		"options": ["is", "be", "was", "will be"],
+		"correct_index": 1,
+		"explanation": "Subjonctif présent : Après des verbes exprimant une suggestion, demande ou obligation ('suggest', 'insist'), on utilise la base verbale pour toutes les personnes."
+	},
+	{
+		"question": "We will start the presentation as soon as the client ____.",
+		"options": ["arrives", "will arrive", "arrived", "is arriving"],
+		"correct_index": 0,
+		"explanation": "Subordonnée de temps : Après des conjonctions comme 'as soon as', 'when' ou 'until', on utilise le présent simple pour parler d'un fait futur."
+	},
+	{
+		"question": "The factory ____ cars since 1995.",
+		"options": ["manufactures", "manufactured", "has been manufacturing", "is manufacturing"],
+		"correct_index": 2,
+		"explanation": "Present Perfect Continuous : Indique la durée ou la continuité d'une action commencée dans le passé et qui se poursuit toujours, souvent avec 'since' ou 'for'."
+	},
+	{
+		"question": "They ____ a new branch in Tokyo next month. The tickets are already booked.",
+		"options": ["opened", "are opening", "open", "have opened"],
+		"correct_index": 1,
+		"explanation": "Present Continuous pour le futur : Utilisé pour exprimer un futur programmé, une action dont les arrangements ont déjà été pris."
+	},
+	{
+		"question": "I ____ read that book, so please don't tell me the ending.",
+		"options": ["haven't", "don't", "am not", "didn't"],
+		"correct_index": 0,
+		"explanation": "Present Perfect : 'I haven't read' indique une expérience qui n'a pas eu lieu dans une période de temps non terminée (jusqu'à maintenant), avec un résultat dans le présent."
+	},
+	{
+		"question": "The documents ____ to your office yesterday afternoon.",
+		"options": ["were sent", "sent", "are sent", "have been sent"],
+		"correct_index": 0,
+		"explanation": "Voix passive au prétérit : L'action a eu lieu 'yesterday' (passé) et le sujet (The documents) subit l'action."
+	},
+	{
+		"question": "When I got to the station, the train ____.",
+		"options": ["already left", "had already left", "has already left", "leaves"],
+		"correct_index": 1,
+		"explanation": "Past Perfect : Utilisé pour montrer qu'une action (le départ du train) s'est déroulée avant une autre action passée (l'arrivée à la gare)."
+	},
+	{
+		"question": "This time tomorrow, we ____ over the Pacific Ocean.",
+		"options": ["will fly", "fly", "will be flying", "are flying"],
+		"correct_index": 2,
+		"explanation": "Future Continuous : Exprime une action qui sera en train de se dérouler à un instant précis dans le futur ('This time tomorrow')."
+	},
+	{
+		"question": "It is essential that he ____ the seminar on safety regulations.",
+		"options": ["attends", "attended", "attend", "has attended"],
+		"correct_index": 2,
+		"explanation": "Subjonctif présent : Avec la structure 'It is essential/important that...', le verbe qui suit est à la base verbale, sans le 's' de la 3ème personne."
+	},
+	{
+		"question": "By the time he is 30, he ____ three different companies.",
+		"options": ["started", "will start", "will have started", "starts"],
+		"correct_index": 2,
+		"explanation": "Future Perfect : Décrit une action qui sera achevée avant un autre repère dans le futur ('By the time he is 30')."
+	},
+	{
+		"question": "They ____ for the delayed flight for over three hours before it was finally canceled.",
+		"options": ["waited", "have been waiting", "had been waiting", "are waiting"],
+		"correct_index": 2,
+		"explanation": "Past Perfect Continuous : Insiste sur la durée d'une action ('for over three hours') qui a eu lieu avant un autre événement passé ('was canceled')."
 	}
 ]
