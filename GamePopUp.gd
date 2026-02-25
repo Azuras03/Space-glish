@@ -32,6 +32,8 @@ func _ready():
 	load_new_question()
 
 func _on_window_grabber_pressed(event):
+	var screen_size = get_viewport().get_visible_rect().size
+	var maxPosition = screen_size - size
 	# Début du drag
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -42,7 +44,8 @@ func _on_window_grabber_pressed(event):
 				is_dragging = false
 	# Si on drag 
 	if event is InputEventMouseMotion and is_dragging:
-		global_position = get_global_mouse_position() - offset
+		global_position.x = max(0, min(get_global_mouse_position().x - offset.x, maxPosition.x))
+		global_position.y = max(0, min(get_global_mouse_position().y - offset.y, maxPosition.y))
 
 func _process(delta):
 	if is_answering and not question_timer.is_stopped():
