@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm6i4vessljb1"]
+[gd_scene load_steps=6 format=3 uid="uid://cm6i4vessljb1"]
 
 [ext_resource type="Script" uid="uid://duyfd1lb7gm47" path="res://rapid_game.gd" id="1_w2bkl"]
 [ext_resource type="PackedScene" uid="uid://pas151sbssf7" path="res://Scenes/GamePopUp.tscn" id="2_w2bkl"]
+[ext_resource type="Shader" uid="uid://lquas0l1mm6m" path="res://Scenes/EndlessGame.gdshader" id="3_0hmwc"]
+[ext_resource type="Script" uid="uid://crw0lwxc083ss" path="res://Scenes/endlessBackground.gd" id="4_heumc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2qau"]
+shader = ExtResource("3_0hmwc")
+shader_parameter/stripes = 5.605
+shader_parameter/stripe_thickness = 0.19
+shader_parameter/stripe_color = Color(0.12069068, 0.25939035, 0.33164233, 1)
+shader_parameter/background_color = Color(0.0163188, 1.937413e-05, 0.067333475, 1)
 
 [node name="RapidGame" type="Control"]
 layout_mode = 3
@@ -12,6 +21,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w2bkl")
 question_scene = ExtResource("2_w2bkl")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_a2qau")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.25, 0.3, 1)
+script = ExtResource("4_heumc")
 
 [node name="GamesAppender" type="Control" parent="."]
 layout_mode = 1
