@@ -1,5 +1,7 @@
 extends Control
 
+class_name GamePopUp
+
 var current_question = null
 var is_answering = false
 var time_limit = 15.0 # Sera écrasé par GameManager
@@ -11,6 +13,7 @@ var time_limit = 15.0 # Sera écrasé par GameManager
 @onready var question_timer = $QuestionTimer
 @onready var window_grabber = $WindowGrabber
 
+var signalTimeout = null;
 var is_dragging = false
 var offset = Vector2.ZERO # Pour mémoriser où on a cliqué à l'intérieur du bouton
 
@@ -30,6 +33,11 @@ func _ready():
 
 	# Load first question
 	load_new_question()
+	
+	if signalTimeout == null:
+		print("C'est null AA");
+		return
+	signalTimeout.connect(setTimerBehaviour)
 
 func _on_window_grabber_pressed(event):
 	var screen_size = get_viewport().get_visible_rect().size
@@ -115,6 +123,9 @@ func _on_timer_timeout():
 	is_answering = false
 	# Timer finished naturally, treat as incorrect
 	show_feedback(false, true)
+
+func setTimerBehaviour(behaviour: bool):
+	question_timer.paused = behaviour;
 
 func show_feedback(is_correct:bool, time_out = false):
 		question_answered.emit(is_correct)

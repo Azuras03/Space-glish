@@ -15,6 +15,7 @@ var vies = 10
 @onready var scoreElement = $TopBar/Score
 @onready var gamesAppender = $GamesAppender
 @onready var livesContainer = $TopBar/LivesContainer
+@onready var pauseModule = $PauseModule
 
 @export var question_scene: PackedScene
 
@@ -27,9 +28,12 @@ func _ready():
 	nextQuestionTimer.timeout.connect(_on_timer_timeout)
 	nextQuestionTimer.start()
 	spawn_question()
+	pauseModule.pause_game.connect(_on_pause)
+	
+func _on_pause(paused: bool):
+	nextQuestionTimer.paused = paused;
 
 func _on_timer_timeout():
-	print("Salu")
 	spawn_question()
 	if (waitTime > minWaitTime+1):
 		waitTime -= waitTimeMinus
@@ -45,28 +49,29 @@ func spawn_question():
 	var screen_size = get_viewport().get_visible_rect().size
 	
 	# 1. On crée une instance de la scène
-	var new_question = question_scene.instantiate()
+	var new_question = question_scene.instantiate() as GamePopUp
 	var maxPosition = screen_size - new_question.size
 	var randPos = Vector2(randf_range(0, maxPosition.x), randf_range(0, maxPosition.y))
 	new_question.position = randPos
 	# 2. On l'ajoute à la scène principale
+	new_question.question_answered.connect(_on_question_answered)
+	new_question.signalTimeout = pauseModule.pause_game;
 	gamesAppender.add_child(new_question)
 	gamesAppender.move_child(new_question, 0)
 	AnimationUtils.animateBeginning(new_question)
 	
 	# 3. LE FAMEUX BRIDGE : on connecte le signal de la question à une fonction d'ici
-	new_question.question_answered.connect(_on_question_answered)
+	
+	
 
 # Cette fonction s'exécutera automatiquement quand le joueur cliquera sur un bouton
 func _on_question_answered(is_correct: bool):
 	if is_correct:
 		score += 10
 		scoreElement.text = str("Score : ", score)
-		print("Super ! Bonne réponse.")
 		# Ajouter des points au score, lancer un son de victoire, etc.
 	else:
 		scoreElement.text = str("Score : ", score)
-		print("Dommage, mauvaise réponse.")
 		vies -= 1
 		update_lives_ui()
 		shake_element(livesContainer)

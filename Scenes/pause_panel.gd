@@ -9,6 +9,8 @@ var isPause = false
 @onready var pause_button = $PauseButton
 
 
+signal pause_game(paused: bool)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pause_panel.visible = false
@@ -45,11 +47,13 @@ func pauseGame():
 	play()
 
 func play():
+	pause_game.emit(false)
 	isPause = false
 	pause_panel.visible = false;
 	#question_timer.paused = false;
 
 func pause():
+	pause_game.emit(true)
 	isPause = true
 	#question_timer.paused = true;
 	pause_panel.visible = true;

@@ -21,7 +21,7 @@ func _create_click_stream() -> AudioStreamWAV:
 	for i in range(int(sample_rate * duration)):
 		var t = i / sample_rate
 		var sample = sin(2.0 * PI * frequency * t) * (1.0 - t/duration)
-		var val = int(sample * 32767)
+		var val = int(sample * 10000)
 		audio_data.append(val & 0xFF)
 		audio_data.append((val >> 8) & 0xFF)
 	
