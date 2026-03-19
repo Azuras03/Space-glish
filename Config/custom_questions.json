@@ -1,0 +1,8 @@
+[
+	{
+		"question": "Add your question here",
+		"options": ["Add the", "options", "here"], 
+		"correct_index": 3,
+		"explanation": "Add here the explanation if you've pressed the wrong answer"
+	},
+]
