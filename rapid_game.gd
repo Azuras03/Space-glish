@@ -5,23 +5,33 @@ var score: int = 0
 
 # Partie timers (spawn des questions)
 var waitTime: int = 10
-var waitTimeMinus: int = .5
+var waitTimeMinus: int = 1
 var minWaitTime: int = 2
 
 # Partie vies
-var vies = 10
+var vies = 1
 
 @onready var nextQuestionTimer = $NextQuestionTimer
 @onready var scoreElement = $TopBar/Score
 @onready var gamesAppender = $GamesAppender
 @onready var livesContainer = $TopBar/LivesContainer
 @onready var pauseModule = $PauseModule
+@onready var scoreLabel = $EndGamePanel/VBoxContainer/ScoreLabel
+@onready var endGamePanel = $EndGamePanel
+@onready var menuButton = $EndGamePanel/VBoxContainer/HBoxContainer/MenuButton
+@onready var retryButton = $EndGamePanel/VBoxContainer/HBoxContainer/RetryButton
 
 @export var question_scene: PackedScene
 
 func _ready():
+	# retirer la visibilité du scoreLabel
+	endGamePanel.visible = false;
 	# Première mise à jour des vies
 	update_lives_ui()
+	
+	# initialisation des boutons de fin
+	menuButton.pressed.connect(on_menu_pressed)
+	retryButton.pressed.connect(on_retry_pressed)
 	
 	scoreElement.text = "Score : 0"
 	nextQuestionTimer.wait_time = waitTime
@@ -29,6 +39,12 @@ func _ready():
 	nextQuestionTimer.start()
 	spawn_question()
 	pauseModule.pause_game.connect(_on_pause)
+
+func on_menu_pressed():
+	get_tree().change_scene_to_file.bind("res://Scenes/MainMenu.tscn").call_deferred()
+
+func on_retry_pressed():
+	get_tree().change_scene_to_file.bind("res://Scenes/rapid_game.tscn").call_deferred()
 	
 func _on_pause(paused: bool):
 	nextQuestionTimer.paused = paused;
@@ -70,10 +86,12 @@ func _on_question_answered(is_correct: bool):
 	else:
 		scoreElement.text = str("Score : ", score)
 		vies -= 1
+		if (vies <= 0):
+			nextQuestionTimer.paused = true
+			scoreLabel.text = scoreElement.text
+			endGamePanel.visible = true
 		update_lives_ui()
 		shake_element(livesContainer)
-		# TODO Gérér la fin (quand on a plus de vie)
-		# Donc une page avec le score et le boutons qui vont bien hehe
 
 
 func shake_element(element):

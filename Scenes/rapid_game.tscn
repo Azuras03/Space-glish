@@ -2,16 +2,17 @@
 
 [ext_resource type="Script" uid="uid://duyfd1lb7gm47" path="res://rapid_game.gd" id="1_w2bkl"]
 [ext_resource type="PackedScene" uid="uid://pas151sbssf7" path="res://Scenes/GamePopUp.tscn" id="2_w2bkl"]
-[ext_resource type="Shader" uid="uid://lquas0l1mm6m" path="res://Scenes/EndlessGame.gdshader" id="3_0hmwc"]
-[ext_resource type="Script" uid="uid://crw0lwxc083ss" path="res://Scenes/endlessBackground.gd" id="4_heumc"]
+[ext_resource type="Texture2D" uid="uid://bdfq07t3q4wkl" path="res://Assets/Img/winxp.jpg" id="3_0hmwc"]
 [ext_resource type="PackedScene" uid="uid://c041es2v270en" path="res://Scenes/pause_panel.tscn" id="5_heumc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2qau"]
-shader = ExtResource("3_0hmwc")
-shader_parameter/stripes = 5.605
-shader_parameter/stripe_thickness = 0.19
-shader_parameter/stripe_color = Color(0.12069068, 0.25939035, 0.33164233, 1)
-shader_parameter/background_color = Color(0.0163188, 1.937413e-05, 0.067333475, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hmwc"]
+bg_color = Color(0.13725491, 0.3647059, 0.85882354, 1)
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.14117648, 0.34509805, 0.60784316, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_heumc"]
+bg_color = Color(0, 0, 0, 0.846)
 
 [node name="RapidGame" type="Control"]
 layout_mode = 3
@@ -23,25 +24,36 @@ grow_vertical = 2
 script = ExtResource("1_w2bkl")
 question_scene = ExtResource("2_w2bkl")
 
-[node name="Background" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_a2qau")
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2, 0.25, 0.3, 1)
-script = ExtResource("4_heumc")
+texture = ExtResource("3_0hmwc")
+expand_mode = 1
 
 [node name="NextQuestionTimer" type="Timer" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 600.0
+offset_bottom = 648.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0hmwc")
 
 [node name="TopBar" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 36.0
+offset_left = 15.0
+offset_top = 607.0
+offset_right = -15.0
+offset_bottom = 643.0
 grow_horizontal = 2
 
 [node name="LivesContainer" type="Label" parent="TopBar"]
@@ -49,14 +61,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Vies"
 
+[node name="Spacer" type="Control" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Score" type="Label" parent="TopBar"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Score : "
-
-[node name="Spacer" type="Control" parent="TopBar"]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="GamesAppender" type="Control" parent="."]
 layout_mode = 1
@@ -66,4 +78,63 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="PauseBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_bottom = 82.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 0.492)
+
 [node name="PauseModule" parent="." instance=ExtResource("5_heumc")]
+
+[node name="EndGamePanel" type="Panel" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -162.0
+offset_right = 335.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_heumc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndGamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Label" type="Label" parent="EndGamePanel/VBoxContainer"]
+layout_mode = 2
+text = "The End..."
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="EndGamePanel/VBoxContainer"]
+layout_mode = 2
+text = "Score : "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EndGamePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="MenuButton" type="Button" parent="EndGamePanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back to the menu"
+
+[node name="RetryButton" type="Button" parent="EndGamePanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Retry"

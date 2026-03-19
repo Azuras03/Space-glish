@@ -6,12 +6,12 @@ var current_question = null
 var is_answering = false
 var time_limit = 15.0 # Sera écrasé par GameManager
 
-@onready var question_label = $Content/QuestionLabel
-@onready var options_container = $Content/OptionsContainer
-@onready var lives_container = $TopBar/LivesContainer
-@onready var time_bar = $TimeBar
+@onready var question_label = $Panel/Content/QuestionLabel
+@onready var options_container = $Panel/Content/OptionsContainer
+@onready var lives_container = $Panel/TopBar/LivesContainer
+@onready var time_bar = $Panel/TimeBar
 @onready var question_timer = $QuestionTimer
-@onready var window_grabber = $WindowGrabber
+@onready var window_grabber = $Panel/WindowGrabber
 
 var signalTimeout = null;
 var is_dragging = false
@@ -62,7 +62,7 @@ func _process(delta):
 		if question_timer.time_left <= 5:
 			time_bar.modulate = Color(1, 0.3, 0.3)
 		else:
-			time_bar.modulate = Color.WHITE
+			time_bar.modulate = Color.BLACK
 
 func load_new_question():
 	current_question = GameManager.get_random_question()
