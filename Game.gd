@@ -14,6 +14,7 @@ var time_limit = 15.0 # Sera écrasé par GameManager
 @onready var home_button = $FeedbackPanel/VBoxContainer/HomeButton
 @onready var time_bar = $TimeBar
 @onready var question_timer = $QuestionTimer
+@onready var pause_module = $PauseModule
 
 signal question_answered(is_correct: bool)
 
@@ -34,9 +35,15 @@ func _ready():
 	# Initialize time bar
 	time_bar.max_value = time_limit
 	time_bar.value = time_limit
+	
+	# Initialise the pause module signal
+	pause_module.pause_game.connect(onPause)
 
 	# Load first question
 	load_new_question()
+
+func onPause(pause: bool):
+	question_timer.paused = pause
 
 func _process(delta):
 	if is_answering and not question_timer.is_stopped():
