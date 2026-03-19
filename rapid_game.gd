@@ -60,9 +60,6 @@ func spawn_question():
 	gamesAppender.move_child(new_question, 0)
 	AnimationUtils.animateBeginning(new_question)
 	
-	# 3. LE FAMEUX BRIDGE : on connecte le signal de la question à une fonction d'ici
-	
-	
 
 # Cette fonction s'exécutera automatiquement quand le joueur cliquera sur un bouton
 func _on_question_answered(is_correct: bool):

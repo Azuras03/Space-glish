@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.1, 0.1, 0.15, 1)
+color = Color(0.05035556, 0.21290666, 0.25897956, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -36,42 +36,27 @@ text = "Select Difficulty"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -100.0
-offset_right = 150.0
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="LearnContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_right = 482.0
+offset_bottom = 648.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="ApprendreLabel" type="Label" parent="VBoxContainer"]
+[node name="ApprendreLabel" type="Label" parent="LearnContainer"]
 layout_mode = 2
-text = "Pour l'apprentissage"
+text = "Classic gamemode"
 horizontal_alignment = 1
 
-[node name="EasyBtn" type="Button" parent="VBoxContainer"]
+[node name="EasyBtn" type="Button" parent="LearnContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Easy"
 script = ExtResource("2_soundbtn")
 
-[node name="NormalBtn" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Normal"
-script = ExtResource("2_soundbtn")
-
-[node name="HardBtn" type="Button" parent="VBoxContainer"]
+[node name="HardBtn" type="Button" parent="LearnContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.6, 0, 1)
@@ -79,20 +64,27 @@ theme_override_font_sizes/font_size = 20
 text = "Hard"
 script = ExtResource("2_soundbtn")
 
-[node name="HardcoreBtn" type="Button" parent="VBoxContainer"]
+[node name="HardcoreBtn" type="Button" parent="LearnContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
 theme_override_font_sizes/font_size = 20
-text = "HARDCORE"
+text = "Insane"
 script = ExtResource("2_soundbtn")
 
-[node name="RenforcementLabel" type="Label" parent="VBoxContainer"]
+[node name="SpecialContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 653.0
+offset_right = 923.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="RenforcementLabel" type="Label" parent="SpecialContainer"]
 layout_mode = 2
-text = "Pour le renforcement"
+text = "Special gamemodes"
 horizontal_alignment = 1
 
-[node name="EndlessBtn" type="Button" parent="VBoxContainer"]
+[node name="EndlessBtn" type="Button" parent="SpecialContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19999999, 0.7866667, 1, 1)
@@ -100,7 +92,7 @@ theme_override_font_sizes/font_size = 20
 text = "Endless"
 script = ExtResource("2_soundbtn")
 
-[node name="RapidBtn" type="Button" parent="VBoxContainer"]
+[node name="RapidBtn" type="Button" parent="SpecialContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19999999, 0.7866667, 1, 1)
