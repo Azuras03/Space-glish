@@ -29,7 +29,7 @@ offset_top = 41.0
 offset_right = 1154.0
 offset_bottom = 110.0
 bbcode_enabled = true
-text = "[center][wave freq=5][font_size=50px][outline_size=20px]Spaceglish"
+text = "[center][wave freq=5][font_size=50px][outline_size=20px]Reinfy"
 fit_content = true
 
 [node name="Label2" type="Label" parent="."]

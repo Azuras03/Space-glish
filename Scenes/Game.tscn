@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6ftyspyxw60p"]
+[gd_scene load_steps=5 format=3 uid="uid://b6ftyspyxw60p"]
 
 [ext_resource type="Script" uid="uid://c80mopeg3gxpc" path="res://Game.gd" id="1_game"]
 [ext_resource type="Script" uid="uid://6anl00e5dn6" path="res://SoundButton.gd" id="2_soundbtn"]
 [ext_resource type="PackedScene" uid="uid://c041es2v270en" path="res://Scenes/pause_panel.tscn" id="3_j5yw3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5yw3"]
+bg_color = Color(0, 0, 0, 0.87900007)
 
 [node name="Game" type="Control"]
 custom_minimum_size = Vector2(600, 300)
@@ -97,6 +100,7 @@ offset_right = 250.0
 offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j5yw3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FeedbackPanel"]
 layout_mode = 1

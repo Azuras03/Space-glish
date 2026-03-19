@@ -21,6 +21,7 @@ var score=0
 @onready var combo_bar = $ComboBar
 @onready var pause_button = $TopBar/PauseButton
 @onready var pause_panel = $PausePanel
+@onready var question_feedback = $QuestionFeedback
 @onready var play_button_pause = $PausePanel/VBoxContainer/HBoxContainer/PlayButton
 @onready var home_button_pause = $PausePanel/VBoxContainer/HBoxContainer/HomeButton
 @onready var musicPauseButton = $PausePanel/VBoxContainer/HBoxContainer/MusicPauseButton
@@ -148,6 +149,11 @@ func scale_element(scale, element, color):
 	color_tween.tween_property(element, "modulate", color, 0.1)
 	color_tween.tween_property(element, "modulate", Color.WHITE, 0.3)
 
+func modulate_element(element, color):
+	var color_tween = create_tween()
+	color_tween.tween_property(element, "modulate", color, 0.1)
+	color_tween.tween_property(element, "modulate", Color.BLACK, 0.5)
+
 func _on_option_selected(index):	
 	var correct_index = int(current_question["correct_index"])
 	var is_correct = (index == correct_index)
@@ -166,13 +172,15 @@ func endGame():
 func show_feedback(is_correct, time_out = false):
 	if(is_correct):
 		score += 100*combo
-		score_label.text = str("Score :", score)
+		score_label.text = str("Score : ", score)
 		scale_element(min(1.1+(combo/10),2), score_label, Color.GREEN)
+		modulate_element(question_feedback, Color.GREEN)
 		combo+=1
 		combo_bar.text = str("x",combo)
 	else:
-		score_label.text = str("Score :", score)
+		score_label.text = str("Score : ", score)
 		combo=1
 		combo_bar.text = str("x",combo)
+		modulate_element(question_feedback, Color.RED)
 		scale_element(.8, combo_bar, Color.RED)
 	load_new_question()

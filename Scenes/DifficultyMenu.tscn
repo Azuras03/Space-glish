@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1c8d58s6fu1k"]
+[gd_scene load_steps=6 format=3 uid="uid://b1c8d58s6fu1k"]
 
 [ext_resource type="Script" uid="uid://co5bp3dj5t6m" path="res://DifficultyMenu.gd" id="1_diff"]
 [ext_resource type="Script" uid="uid://6anl00e5dn6" path="res://SoundButton.gd" id="2_soundbtn"]
+
+[sub_resource type="Curve" id="Curve_5hner"]
+_data = [Vector2(0.010256417, 0.022471905), 0.0, 3.8139825, 0, 0, Vector2(0.52820516, 0.9101124), 0.18646899, 0.18646899, 0, 0, Vector2(1, 0), -2.8418071, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a0yor"]
+curve = SubResource("Curve_5hner")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t4r5o"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 125.71
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 31.909998
+radial_accel_max = 31.909998
+scale_max = 16.22
+scale_curve = SubResource("CurveTexture_a0yor")
+color = Color(0.22659302, 0.470953, 0.52734375, 1)
 
 [node name="DifficultyMenu" type="Control"]
 layout_mode = 3
@@ -20,6 +39,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.05035556, 0.21290666, 0.25897956, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ColorRect"]
+position = Vector2(781, 339)
+amount = 20
+sub_emitter = NodePath(".")
+lifetime = 4.47
+process_material = SubResource("ParticleProcessMaterial_t4r5o")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -46,7 +72,7 @@ alignment = 1
 
 [node name="ApprendreLabel" type="Label" parent="LearnContainer"]
 layout_mode = 2
-text = "Classic gamemode"
+text = "Classic gamemodes"
 horizontal_alignment = 1
 
 [node name="EasyBtn" type="Button" parent="LearnContainer"]
@@ -77,6 +103,7 @@ layout_mode = 0
 offset_left = 653.0
 offset_right = 923.0
 offset_bottom = 648.0
+theme_override_constants/separation = 14
 alignment = 1
 
 [node name="RenforcementLabel" type="Label" parent="SpecialContainer"]
@@ -89,7 +116,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19999999, 0.7866667, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Endless"
+text = "Combo party"
 script = ExtResource("2_soundbtn")
 
 [node name="RapidBtn" type="Button" parent="SpecialContainer"]
@@ -97,5 +124,5 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19999999, 0.7866667, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "RapidGame"
+text = "Pop-up Invasion"
 script = ExtResource("2_soundbtn")

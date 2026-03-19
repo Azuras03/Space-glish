@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c041es2v270en"]
+[gd_scene load_steps=6 format=3 uid="uid://c041es2v270en"]
 
 [ext_resource type="Script" uid="uid://6anl00e5dn6" path="res://SoundButton.gd" id="1_f8ocd"]
 [ext_resource type="Script" uid="uid://cqxdm285vv5q1" path="res://Scenes/pause_panel.gd" id="1_o1lui"]
 [ext_resource type="Texture2D" uid="uid://bnh5l763gwuss" path="res://Assets/Buttons/pause.png" id="2_dp4iu"]
 [ext_resource type="Script" uid="uid://7e68hb24hbuy" path="res://TextureSoundButton.gd" id="3_o1lui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1lui"]
+bg_color = Color(0.21209754, 0.35070777, 0.5468543, 0.66300005)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.51171875, 0.5651245, 1, 0.42000002)
+shadow_color = Color(0, 0, 0, 0.194)
+shadow_size = 30
 
 [node name="PauseModule" type="Node"]
 script = ExtResource("1_o1lui")
@@ -30,6 +40,7 @@ offset_right = -179.0
 offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o1lui")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PausePanel"]
 layout_mode = 1
