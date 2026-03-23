@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcc4r7xsm7emd"]
+[gd_scene load_steps=5 format=3 uid="uid://dcc4r7xsm7emd"]
 
 [ext_resource type="Script" uid="uid://so5xr1lb8ywh" path="res://CategoryMenu.gd" id="1_ogx67"]
 [ext_resource type="Script" uid="uid://6anl00e5dn6" path="res://SoundButton.gd" id="2_1uj23"]
+[ext_resource type="Texture2D" uid="uid://c4pt7xm12apg4" path="res://Assets/Buttons/quit.png" id="3_ypvfa"]
+[ext_resource type="Script" uid="uid://7e68hb24hbuy" path="res://TextureSoundButton.gd" id="4_0d5t7"]
 
 [node name="CategoryMenu" type="Control"]
 layout_mode = 3
@@ -74,3 +76,28 @@ offset_right = 707.0
 offset_bottom = 169.0
 bbcode_enabled = true
 text = "[center][wave freq=5][font_size=40px]Select Topic"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+offset_right = 94.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.32156864)
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -85.0
+offset_right = 84.0
+offset_bottom = -8.0
+grow_vertical = 0
+texture_normal = ExtResource("3_ypvfa")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_0d5t7")

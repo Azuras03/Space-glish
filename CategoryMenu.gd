@@ -3,10 +3,14 @@ extends Control
 signal file_selected_async(path: String)
 
 func _ready():
+	$BackButton.pressed.connect(_on_quit_button)
 	$VBoxContainer/ConjugationBtn.pressed.connect(_on_category_selected.bind("res://Config/conjugation.json"))
 	$VBoxContainer/PhrasalBtn.pressed.connect(_on_category_selected.bind("res://Config/phrasal_verbs.json"))
 	$VBoxContainer/MixedBtn.pressed.connect(_on_category_selected.bind("res://Config/questions.json"))
 	$VBoxContainer/ImportBtn.pressed.connect(_import_button_action)
+
+func _on_quit_button():
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 
 func _on_category_selected(file_path: String):
 	GameManager.load_questions(file_path)
