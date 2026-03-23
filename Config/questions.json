@@ -1,37 +1,326 @@
 [
 	{
-		"id": "q1",
-		"question": "I usually ____ up at 7 AM every day.",
-		"options": ["get", "got", "getting"],
-		"correct_index": 0,
-		"explanation": "Use the Present Simple ('get') for habits or repeated actions."
-	},
-	{
-		"id": "q2",
 		"question": "She ____ to the cinema yesterday.",
-		"options": ["go", "goes", "went"],
+		"options": ["go", "goes", "went", "gone", "has"],
 		"correct_index": 2,
-		"explanation": "The key word is 'yesterday', so we must use the Past Simple ('went')."
+		"explanation": "Past Simple: 'yesterday' indicates a finished action in the past."
 	},
 	{
-		"id": "q3",
-		"question": "Hey! Get ____ of here, it's dangerous!",
-		"options": ["up", "out", "in"],
-		"correct_index": 1,
-		"explanation": "'Get out' means to leave a place. 'Get up' implies rising from a bed or chair."
+		"question": "I have ____ my homework already.",
+		"options": ["do", "did", "done"],
+		"correct_index": 2,
+		"explanation": "Present Perfect: 'have' + past participle ('done')."
 	},
 	{
-		"id": "q4",
-		"question": "If I had money, I ____ buy a car.",
-		"options": ["will", "would", "did"],
-		"correct_index": 1,
-		"explanation": "This is the Second Conditional. We use 'would' + infinitive for hypothetical situations."
+		"question": "Look! It ____ raining.",
+		"options": ["is", "was", "are"],
+		"correct_index": 0,
+		"explanation": "Present Continuous: The action is happening right now ('Look!')."
 	},
 	{
-		"id": "q5",
-		"question": "How do you do?",
-		"options": ["I'm fine, thanks.", "How do you do?", "I am doing homework."],
+		"question": "If I ____ you, I would study harder.",
+		"options": ["was", "were", "am"],
 		"correct_index": 1,
-		"explanation": "'How do you do?' is a formal greeting. The correct response is to repeat 'How do you do?'."
+		"explanation": "Second Conditional: We use 'were' for all persons in hypothetical situations."
+	},
+	{
+		"question": "The marketing director ____ to London every Tuesday for the regional meeting.",
+		"options": ["go", "goes", "is going"],
+		"correct_index": 1,
+		"explanation": "Present Simple : On utilise 'goes' (3ème personne du singulier) pour exprimer une habitude ou une action répétée ('every Tuesday')."
+	},
+	{
+		"question": "By the time the manager arrived, the presentation ____ already started.",
+		"options": ["has", "was", "had"],
+		"correct_index": 2,
+		"explanation": "Past Perfect : On utilise 'had + participe passé' pour une action qui s'est produite avant une autre action passée ('the manager arrived')."
+	},
+	{
+		"question": "Look! It ____ raining.",
+		"options": ["is", "was", "are"],
+		"correct_index": 0,
+		"explanation": "Present Continuous : L'action se déroule au moment même où l'on parle ('Look!')."
+	},
+	{
+		"question": "We ____ our annual report for three weeks now.",
+		"options": ["prepare", "are preparing", "have been preparing"],
+		"correct_index": 2,
+		"explanation": "Present Perfect Continuous : Pour une action qui a commencé dans le passé et qui continue dans le présent, surtout avec un marqueur de durée ('for three weeks')."
+	},
+	{
+		"question": "If I ____ more time, I would finish the project today.",
+		"options": ["have", "had", "would have"],
+		"correct_index": 1,
+		"explanation": "Second Conditional : La structure est 'If + Past Simple, would + base verbale' pour exprimer une hypothèse dans le présent."
+	},
+	{
+		"question": "Last year, the company ____ its headquarters to a larger building.",
+		"options": ["moved", "has moved", "was moving"],
+		"correct_index": 0,
+		"explanation": "Past Simple : On utilise le prétérit pour une action terminée et datée dans le passé ('Last year')."
+	},
+	{
+		"question": "Please remain seated until the plane ____ to a complete stop.",
+		"options": ["will come", "comes", "is coming"],
+		"correct_index": 1,
+		"explanation": "Subordonnée de temps : Après 'until', 'when' ou 'as soon as', on utilise le présent simple pour parler d'un événement futur."
+	},
+	{
+		"question": "I ____ Mr. Henderson since he left the firm in 2018.",
+		"options": ["didn't see", "don't see", "haven't seen"],
+		"correct_index": 2,
+		"explanation": "Present Perfect : On l'utilise avec 'since' pour faire le bilan d'une période allant du passé jusqu'à maintenant."
+	},
+	{
+		"question": "They ____ the contract when the power went out.",
+		"options": ["signed", "were signing", "have signed"],
+		"correct_index": 1,
+		"explanation": "Past Continuous : Pour une action longue qui était en cours au moment où une action brève au prétérit est survenue."
+	},
+	{
+		"question": "Next month, she ____ for this company for exactly ten years.",
+		"options": ["will work", "is going to work", "will have worked"],
+		"correct_index": 2,
+		"explanation": "Future Perfect : Pour exprimer une action qui sera accomplie à un moment précis du futur ('Next month')."
+	},
+	{
+		"question": "The CEO ____ the new expansion strategy during the board meeting yesterday.",
+		"options": ["discusses", "discussed", "has discussed", "was discussing"],
+		"correct_index": 1,
+		"explanation": "Past Simple : Le mot 'yesterday' indique une action terminée à un moment précis dans le passé."
+	},
+	{
+		"question": "If the delivery ____ on time, we will be able to fulfill the client's order.",
+		"options": ["arrives", "will arrive", "arrived", "is arriving"],
+		"correct_index": 0,
+		"explanation": "First Conditional : Dans une phrase avec 'if' exprimant une condition future probable, la subordonnée est au présent simple."
+	},
+	{
+		"question": "Mr. Thompson ____ for the company for twenty years before he retired last month.",
+		"options": ["has worked", "works", "had worked", "is working"],
+		"correct_index": 2,
+		"explanation": "Past Perfect : Utilisé pour une action qui a duré et s'est achevée avant un autre événement dans le passé ('before he retired')."
+	},
+	{
+		"question": "The technicians ____ the servers at the moment, so the website might be slow.",
+		"options": ["update", "are updating", "updated", "have updated"],
+		"correct_index": 1,
+		"explanation": "Present Continuous : L'expression 'at the moment' indique une action en cours de déroulement à l'instant présent."
+	},
+	{
+		"question": "By the end of this year, our sales team ____ their annual target.",
+		"options": ["will achieve", "achieves", "will have achieved", "achieved"],
+		"correct_index": 2,
+		"explanation": "Future Perfect : 'By the end of this year' indique qu'une action sera accomplie avant un moment précis dans le futur."
+	},
+	{
+		"question": "I ____ to the manager about the issue yet, but I plan to do it this afternoon.",
+		"options": ["don't speak", "didn't speak", "am not speaking", "haven't spoken"],
+		"correct_index": 3,
+		"explanation": "Present Perfect : 'Yet' est souvent utilisé avec le Present Perfect dans les phrases négatives pour une action non encore réalisée jusqu'à présent."
+	},
+	{
+		"question": "While she ____ the report, the computer suddenly crashed.",
+		"options": ["typed", "was typing", "has typed", "types"],
+		"correct_index": 1,
+		"explanation": "Past Continuous : Exprime une action en cours de progression dans le passé lorsqu'une autre action brève (crashed) l'interrompt."
+	},
+	{
+		"question": "If they had offered a better discount, we ____ the contract with them.",
+		"options": ["would sign", "will sign", "signed", "would have signed"],
+		"correct_index": 3,
+		"explanation": "Third Conditional : Formé de 'If + Past Perfect' et de la principale en 'would have + participe passé' pour exprimer un regret ou une situation irréelle dans le passé."
+	},
+	{
+		"question": "The new software ____ installed on all computers by next Friday.",
+		"options": ["will be", "is", "was", "has been"],
+		"correct_index": 0,
+		"explanation": "Future Passive : 'by next Friday' indique le futur, et le sujet subit l'action d'être installé (voix passive)."
+	},
+	{
+		"question": "She strongly suggested that the budget ____ reviewed before the meeting.",
+		"options": ["is", "be", "was", "will be"],
+		"correct_index": 1,
+		"explanation": "Subjonctif présent : Après des verbes exprimant une suggestion, demande ou obligation ('suggest', 'insist'), on utilise la base verbale pour toutes les personnes."
+	},
+	{
+		"question": "We will start the presentation as soon as the client ____.",
+		"options": ["arrives", "will arrive", "arrived", "is arriving"],
+		"correct_index": 0,
+		"explanation": "Subordonnée de temps : Après des conjonctions comme 'as soon as', 'when' ou 'until', on utilise le présent simple pour parler d'un fait futur."
+	},
+	{
+		"question": "The factory ____ cars since 1995.",
+		"options": ["manufactures", "manufactured", "has been manufacturing", "is manufacturing"],
+		"correct_index": 2,
+		"explanation": "Present Perfect Continuous : Indique la durée ou la continuité d'une action commencée dans le passé et qui se poursuit toujours, souvent avec 'since' ou 'for'."
+	},
+	{
+		"question": "They ____ a new branch in Tokyo next month. The tickets are already booked.",
+		"options": ["opened", "are opening", "open", "have opened"],
+		"correct_index": 1,
+		"explanation": "Present Continuous pour le futur : Utilisé pour exprimer un futur programmé, une action dont les arrangements ont déjà été pris."
+	},
+	{
+		"question": "I ____ read that book, so please don't tell me the ending.",
+		"options": ["haven't", "don't", "am not", "didn't"],
+		"correct_index": 0,
+		"explanation": "Present Perfect : 'I haven't read' indique une expérience qui n'a pas eu lieu dans une période de temps non terminée (jusqu'à maintenant), avec un résultat dans le présent."
+	},
+	{
+		"question": "The documents ____ to your office yesterday afternoon.",
+		"options": ["were sent", "sent", "are sent", "have been sent"],
+		"correct_index": 0,
+		"explanation": "Voix passive au prétérit : L'action a eu lieu 'yesterday' (passé) et le sujet (The documents) subit l'action."
+	},
+	{
+		"question": "When I got to the station, the train ____.",
+		"options": ["already left", "had already left", "has already left", "leaves"],
+		"correct_index": 1,
+		"explanation": "Past Perfect : Utilisé pour montrer qu'une action (le départ du train) s'est déroulée avant une autre action passée (l'arrivée à la gare)."
+	},
+	{
+		"question": "This time tomorrow, we ____ over the Pacific Ocean.",
+		"options": ["will fly", "fly", "will be flying", "are flying"],
+		"correct_index": 2,
+		"explanation": "Future Continuous : Exprime une action qui sera en train de se dérouler à un instant précis dans le futur ('This time tomorrow')."
+	},
+	{
+		"question": "It is essential that he ____ the seminar on safety regulations.",
+		"options": ["attends", "attended", "attend", "has attended"],
+		"correct_index": 2,
+		"explanation": "Subjonctif présent : Avec la structure 'It is essential/important that...', le verbe qui suit est à la base verbale, sans le 's' de la 3ème personne."
+	},
+	{
+		"question": "By the time he is 30, he ____ three different companies.",
+		"options": ["started", "will start", "will have started", "starts"],
+		"correct_index": 2,
+		"explanation": "Future Perfect : Décrit une action qui sera achevée avant un autre repère dans le futur ('By the time he is 30')."
+	},
+	{
+		"question": "They ____ for the delayed flight for over three hours before it was finally canceled.",
+		"options": ["waited", "have been waiting", "had been waiting", "are waiting"],
+		"correct_index": 2,
+		"explanation": "Past Perfect Continuous : Insiste sur la durée d'une action ('for over three hours') qui a eu lieu avant un autre événement passé ('was canceled')."
+	},
+	{
+		"question": "The meeting was ____ because of the manager's illness.",
+		"options": ["called up", "called off", "called out", "called in"],
+		"correct_index": 1,
+		"explanation": "'Call off' signifie annuler (cancel). L'événement n'aura pas lieu."
+	},
+	{
+		"question": "We need to ____ a solution to this problem before Friday.",
+		"options": ["come down to", "come out of", "come up with", "come over"],
+		"correct_index": 2,
+		"explanation": "'Come up with' signifie trouver ou imaginer (une idée, un plan, une solution)."
+	},
+	{
+		"question": "Could you please ____ this form and sign it at the bottom?",
+		"options": ["fill out", "make out", "take out", "turn out"],
+		"correct_index": 0,
+		"explanation": "'Fill out' (ou 'fill in') signifie remplir un document ou un formulaire."
+	},
+	{
+		"question": "I am really looking ____ to seeing you at the conference.",
+		"options": ["ahead", "around", "out", "forward"],
+		"correct_index": 3,
+		"explanation": "'Look forward to' signifie avoir hâte de faire quelque chose ou d'assister à un événement."
+	},
+	{
+		"question": "Never ____ up, even when the negotiations get difficult!",
+		"options": ["put", "give", "take", "make"],
+		"correct_index": 1,
+		"explanation": "'Give up' signifie abandonner ou renoncer."
+	},
+	{
+		"question": "They had to ____ the match until next week due to heavy rain.",
+		"options": ["put away", "put out", "put off", "put on"],
+		"correct_index": 2,
+		"explanation": "'Put off' signifie reporter ou repousser à plus tard (postpone)."
+	},
+	{
+		"question": "He ____ down the job offer because the salary was too low.",
+		"options": ["turned", "took", "put", "brought"],
+		"correct_index": 0,
+		"explanation": "'Turn down' signifie refuser ou rejeter une offre."
+	},
+	{
+		"question": "We have ____ out of printing paper, we need to order more immediately.",
+		"options": ["walked", "run", "come", "gone"],
+		"correct_index": 1,
+		"explanation": "'Run out of' signifie être à court de quelque chose (ne plus en avoir en stock)."
+	},
+	{
+		"question": "Can you ____ me up from the airport at 6 PM?",
+		"options": ["take", "catch", "get", "pick"],
+		"correct_index": 3,
+		"explanation": "'Pick up' dans ce contexte signifie passer prendre quelqu'un, généralement en voiture."
+	},
+	{
+		"question": "The company plans to ____ on a hundred new employees this year.",
+		"options": ["take", "put", "get", "bring"],
+		"correct_index": 0,
+		"explanation": "'Take on' signifie embaucher (hire) du personnel."
+	},
+	{
+		"question": "Please make sure to ____ off the lights before leaving the office.",
+		"options": ["put", "turn", "take", "make"],
+		"correct_index": 1,
+		"explanation": "'Turn off' (ou 'switch off') signifie éteindre."
+	},
+	{
+		"question": "I didn't expect to ____ into my old boss at the supermarket.",
+		"options": ["walk", "fall", "run", "come"],
+		"correct_index": 2,
+		"explanation": "'Run into' signifie rencontrer quelqu'un par hasard (bump into)."
+	},
+	{
+		"question": "We need to ____ over the contract details before signing.",
+		"options": ["go", "get", "put", "make"],
+		"correct_index": 0,
+		"explanation": "'Go over' signifie examiner ou passer en revue (review)."
+	},
+	{
+		"question": "The IT department will ____ up the new computers tomorrow.",
+		"options": ["put", "make", "get", "set"],
+		"correct_index": 3,
+		"explanation": "'Set up' signifie installer ou configurer du matériel."
+	},
+	{
+		"question": "She was able to ____ out the complicated math problem by herself.",
+		"options": ["make", "figure", "take", "think"],
+		"correct_index": 1,
+		"explanation": "'Figure out' signifie comprendre ou résoudre un problème par la réflexion."
+	},
+	{
+		"question": "I will ____ up the supplier's phone number in the directory.",
+		"options": ["look", "search", "find", "check"],
+		"correct_index": 0,
+		"explanation": "'Look up' signifie chercher une information (dans un dictionnaire, un annuaire, sur internet)."
+	},
+	{
+		"question": "Don't forget to ____ on your hard hat before entering the construction site.",
+		"options": ["wear", "take", "put", "get"],
+		"correct_index": 2,
+		"explanation": "'Put on' signifie mettre (un vêtement ou un équipement de protection)."
+	},
+	{
+		"question": "The factory had to ____ off 50 workers due to budget cuts.",
+		"options": ["put", "lay", "send", "take"],
+		"correct_index": 1,
+		"explanation": "'Lay off' signifie licencier pour des raisons économiques."
+	},
+	{
+		"question": "We should ____ ahead with the project despite the potential risks.",
+		"options": ["go", "move", "run", "walk"],
+		"correct_index": 0,
+		"explanation": "'Go ahead' signifie aller de l'avant ou commencer/continuer ce qui était prévu."
+	},
+	{
+		"question": "She tried to ____ out what was causing the error in the software.",
+		"options": ["look", "search", "make", "find"],
+		"correct_index": 3,
+		"explanation": "'Find out' signifie découvrir ou obtenir une information."
 	}
 ]
