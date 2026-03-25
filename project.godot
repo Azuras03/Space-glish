@@ -13,7 +13,6 @@ config_version=5
 config/name="JeuTestAnglais"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,6 +20,10 @@ config/icon="res://icon.svg"
 GameManager="*res://GameManager.gd"
 SoundManager="*res://SoundManager.gd"
 AnimationUtils="*res://AnimationUtils.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor]
 

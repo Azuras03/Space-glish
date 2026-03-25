@@ -9,7 +9,7 @@ var waitTimeMinus: int = 1
 var minWaitTime: int = 2
 
 # Partie vies
-var vies = 1
+var vies = 10
 
 @onready var nextQuestionTimer = $NextQuestionTimer
 @onready var scoreElement = $TopBar/Score
